@@ -18,3 +18,9 @@ func acquire_target(target):
 	# such as rotate a turret to face the target, etc...
 	my_target = target
 	emit_signal("target_acquired", self, target)
+
+func has_target():
+	return not my_target == null
+
+func get_target():
+	return my_target

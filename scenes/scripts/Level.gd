@@ -22,3 +22,7 @@ func _on_EnemyWeapon_target_requested(enemy_weapon):
 func _on_EnemyWeapon_target_acquired(enemy_weapon, target):
 	$TargetIndicator.global_position = target.global_position
 	
+func _process(delta):
+	if $Enemy/Weapon.has_target():
+		var target = $Enemy/Weapon.get_target()
+		$TargetIndicator.global_position = target.global_position
